@@ -1,8 +1,22 @@
 " vimrc by Vinicius Canto
-" Vers„o 1.2.5
-" ⁄ltima AtualizaÁ„o: 16/08/2008
+" Vers√£o 1.2.7
+" √öltima Atualiza√ß√£o: 07/01/2009
 
-"testando funcionalidades
+"TODO: criar mapping pro FuzzyFinder
+"TODO: criar fun√ß√£o para facilitar edi√ß√£o de arquivos gigantes (desativar
+"undo, swap e outros recursos para ganhar velocidade. ver no wikia)
+
+"configurando o TAB no modo comando (see
+"http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse)
+set wildmenu
+set wildmode=list:longest,full
+
+"WARNING: configura√ß√£o de folding. Sugiro ler o help, j√° que essa √© extremamente
+"pessoal.
+"
+"com a configura√ß√£o a seguir, o folding segue a indenta√ß√£o, usa quatro colunas
+"√† esquerda para mostrar o fold e s√≥ esconde trechos maiores que 10 linhas por
+"padr√£o. use zR para abrir todos e zM para fechar todos.
 set foldmethod=indent
 set foldcolumn=4
 set foldminlines=10
@@ -14,26 +28,27 @@ set nocompatible
 set listchars=trail:.,tab:._
 set list
 
-"frescura: configurando um espaÁo extra de limite quando for dar um scroll.
-"bom, È difÌcil explicar isso... veja no help
+"frescura: configurando um espa√ßo extra de limite quando for dar um scroll.
+"Configurando a taxa de repeti√ß√£o do teclado no m√°ximo, evita H M L desnecess√°rios.
+"bom, √© dif√≠cil explicar isso... veja no help
 set scrolloff=5
 
 "configurando pra sempre aparecer a statusline
 set laststatus=2
 
-"liberando a seleÁ„o em bloco mesmo que n„o exista caractere na posiÁ„o que eu
-"quero. see help for more
+"liberando a sele√ß√£o em bloco mesmo que n√£o exista caractere na posi√ß√£o que eu
+"quero. Veja no help.
 set ve=block,onemore
 
 "Configurando tudo que deve aparecer na minha statusline
 set statusline=%<%f\ %6.h%m%r[%{&fileencoding}]%=A:%03.b\ H:0x%02.B\ Lin:%l\ Ch:%c\ Col:%v\ %P
 
-"Configurando o split padr„o para vertical
+"Configurando o split padr√£o para vertical
 set splitright
 
-"Configurando a codificaÁ„o dos arquivos
+"Configurando a codifica√ß√£o dos arquivos
 set encoding=utf-8
-set termencoding=latin1 "algumas vezes pode colocar utf-8
+set termencoding=latin1 "algumas vezes pode colocar utf-8, dependendo do SO.
 
 "Configurando a altura da barra de comandos
 set cmdheight=3
@@ -43,37 +58,36 @@ set stal=2
 
 "carregando esquema de cores
 
-if has("gui_running")
+if has("gui_running") "pode ser usado tamb√©m o gvimrc ao inv√©s do has(guirunning)
 	"melhor para programar
 	colorscheme desert
 
-	"melhor para programar 2
-	"colorscheme slate
-
-	"melhor para apresentaÁıes
+	"melhor para apresenta√ß√µes em projetores
 	"colorscheme murphy
 
-	"Configurando a ·rea da tela
+	"Configurando a √°rea da tela
 	set lines=38
 	set columns=106
-	"winpos 75 121 n„o quero mais essa m...
 
-	"configurando o que vai aparecer na interface gr·fica
-	set go=eimrbh
+	"configurando o que vai aparecer na interface gr√°fica. Veja no help.
+	"Tirei a barra de ferramentas, 
+	set go=eirbh "m √© a barra de menus, em caso de emergencia.
 
-	"certificando que o ALT n„o vai ser usado pra nada
+	"certificando que o ALT n√£o vai ser usado pra nada
 	set winaltkeys=no
 
-	"frescura: aumentando o espaÁo entre as linhas na interface gr·fica
+	"frescura: aumentando o espa√ßo entre as linhas na interface gr√°fica.
+	"Aumenta legibilidade
 	set linespace=2
 
-	"configuraÁ„o da fonte no modo gr·fico
+	"configura√ß√£o da fonte no modo gr√°fico para usar a Consolas. Ative o
+	"ClearType (mesmo em CRTs) ou o resultado n√£o ser√° bom...
 	if has("win32")
-		set gfn=Lucida_Console:h13:cANSI
+		set gfn=Lucida_Console:h13:cANSI "caso a consolas n√£o exista, vai de lucida mesmo
 		set gfn=Consolas:h13:cANSI
 		"set gfn=Lucida_Sans_Typewriter:h12:cANSI
 	else
-		set gfn="Bitstream_Vera_Sans_Mono":h10:cANSI
+		set gfn="Bitstream_Vera_Sans_Mono":h10:cANSI "fonte boa para usar no Linux/Enlightenment
 	endif
 else
 	colorscheme slate
@@ -81,23 +95,25 @@ else
 endif
 
 
-"desliga quebras de linha autom·ticas
+"desliga quebras de linha autom√°ticas
 set nowrap
 
-"mostra a rÈgua, mostrando o posicionamento na tela no canto esquerdo
+"mostra a r√©gua, mostrando o posicionamento na tela no canto esquerdo
 set ruler
 
 "indentacao automagica
 set autoindent
 
-"ft on
+"ft on. Verifique com :ft
 filetype plugin on
 filetype plugin indent on
 
 "nivel de indentacao
 set shiftwidth=5                "tamanho do >> << e cident
 set tabstop=5                   "tamanho do tab msm
-"deixe esses dois n˙meros iguais pra travar o TAB pra tudo
+"deixe esses dois n√∫meros iguais pra travar o TAB pra tudo. Use os arquivos
+"~/vimfiles/ftplugin/<linguagem>.vim para configura√ß√µes diferentes para cada
+"linguagem
 
 "configura o backspace corretamente
 set backspace=indent,eol,start whichwrap+=<,>,[,]
@@ -108,12 +124,12 @@ set number
 "syntax highlighting
 syntax on
 
-"opÁıes que tornam a busca mais interessante...
-set hlsearch
+"op√ß√µes que tornam a busca mais interessante...
+set hlsearch "veja o mapemento do F11 mais abaixo
 set ignorecase
 set incsearch
 
-"opÁıes que eu n„o conheÁo ainda
+"op√ß√µes que eu n√£o conhe√ßo ainda
 set nocp
 set title
 set ttyfast
@@ -159,22 +175,23 @@ nmap <Esc>OR *
 nmap <Esc>Ol +
 nmap <Esc>OS -
 
-"mapeamentos do modo inserÁ„o
+"mapeamentos do modo inser√ß√£o
 imap <C-backspace> <C-w>
 "imap <C-backspace> <C-o>db<backspace>
 imap <C-delete> <C-o>dw
 
 
-"mapeamento de teclas de funÁ„o
+"mapeamento de teclas de fun√ß√£o
 
 "F1 -- Help. Interno do VIM
 "F2 -- Abrir arquivo usando janelas
 "F3 -- Salvar arquivo usando janelas
 "F4 -- Fechar usando :q
 "F5 -- Nova tab.
-"F6 -- PrÛxima Tab
+"F6 -- Pr√≥xima Tab
 "Shift + F6 -- Tab Anterior
-"F12 -- Alterna entre modo normal e modo "notepad", ativando o wrap e o lbr
+"F12 -- Alterna entre modo normal e modo "notepad", ativando o wrap e o
+"linebreak
 
 
 "mapeamentos simples
@@ -233,15 +250,4 @@ function DisableDisplayWrapping()
 		iunmap <buffer> <Down>
 	endif
 endfunction
-
-" Move o buffer atual para uma nova tab ------- desativei pq corresponde ao
-" C-w S-T e move a janela atual para uma nova tab
-"
-" function MoveToTab()
-"     let l:current = bufnr('%')
-"     close
-"     tabnew
-"     exe "b ". l:current
-" endfunction
-" map to :call MoveToTab()<CR>
 
