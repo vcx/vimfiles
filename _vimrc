@@ -5,6 +5,9 @@
 "TODO: criar mapping pro FuzzyFinder
 "TODO: criar função para facilitar edição de arquivos gigantes (desativar
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
+"
+
+set cursorline
 
 "configurando o TAB no modo comando (see
 "http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse)
