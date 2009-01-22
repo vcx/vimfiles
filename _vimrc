@@ -261,3 +261,8 @@ function! DisableDisplayWrapping()
 	endif
 endfunction
 
+"opções do TagList
+
+"não aumentar a janela do Vim quando acionar o taglist
+let Tlist_Inc_Winwidth = 0
+
