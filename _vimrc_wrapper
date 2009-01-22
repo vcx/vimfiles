@@ -7,4 +7,4 @@
 " Use o script install_stub.cmd para copiar automaticamente este arquivo para
 " o _vimrc padrão: ~/_vimrc
 
-source vimfiles/_vimrc
+source ~/vimfiles/_vimrc
