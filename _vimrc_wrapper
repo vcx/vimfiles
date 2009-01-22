@@ -1,0 +1,10 @@
+" _vimrc stub
+" viniciuscanto@gmail.com
+"
+" Este script somente carrega o arquivo de mesmo nome, dentro de ~/vimfiles
+" Isso ajuda no versionamento, que passa a depender somente de arquivos dentro
+" do vimfiles.
+" Use o script install_stub.cmd para copiar automaticamente este arquivo para
+" o _vimrc padrão: ~/_vimrc
+
+source vimfiles/_vimrc

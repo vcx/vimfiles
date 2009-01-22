@@ -1,12 +1,13 @@
 " vimrc by Vinicius Canto
-" Versão 1.2.7
-" Última Atualização: 07/01/2009
+" Versão 1.2.9
+" Última Atualização: 21/01/2009
 
 "TODO: criar mapping pro FuzzyFinder
 "TODO: criar função para facilitar edição de arquivos gigantes (desativar
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
 "
 
+"configura a linha em destaque, comum no Eclipse. (isso pode causar lentidão)
 set cursorline
 
 "configurando o TAB no modo comando (see
@@ -86,8 +87,8 @@ if has("gui_running") "pode ser usado também o gvimrc ao invés do has(guirunni
 	"configuração da fonte no modo gráfico para usar a Consolas. Ative o
 	"ClearType (mesmo em CRTs) ou o resultado não será bom...
 	if has("win32")
-		set gfn=Lucida_Console:h13:cANSI "caso a consolas não exista, vai de lucida mesmo
-		set gfn=Consolas:h13:cANSI
+		set gfn=Lucida_Console:h11:cANSI "caso a consolas não exista, vai de lucida mesmo
+		set gfn=Consolas:h11:cANSI
 		"set gfn=Lucida_Sans_Typewriter:h12:cANSI
 	else
 		set gfn="Bitstream_Vera_Sans_Mono":h10:cANSI "fonte boa para usar no Linux/Enlightenment
@@ -183,6 +184,9 @@ imap <C-backspace> <C-w>
 "imap <C-backspace> <C-o>db<backspace>
 imap <C-delete> <C-o>dw
 
+"mapeamentos do modo normal
+nmap <space> <C-d>
+nmap <S-space> <C-u>
 
 "mapeamento de teclas de função
 
@@ -198,9 +202,10 @@ imap <C-delete> <C-o>dw
 
 
 "mapeamentos simples
-map <F2> :e
-map <S-F2> :Te<CR>
-map <C-F2> :E<CR>
+nmap <F1> :help<space>
+nmap <F2> :FuzzyFinderFile<CR>
+nmap <C-F2> :FuzzyFinderMruFile<CR>
+
 map <F3> :if expand("%") == ""<Bar>browse confirm w<Bar>else<Bar>confirm w<Bar>endif<CR>
 map <F4> :q<CR>
 
@@ -216,19 +221,21 @@ else
 	map <silent><C-S-tab> :bp<CR>
 endif
 
-"map <silent><F12> :set wrap<cr>:set lbr<cr>
+nmap <F7> :NERDTreeToggle<CR>
+nmap <F8> :TlistToggle<CR>
+
 map <F11> :set hlsearch!<cr>
 
 " Configurando o F12 para ativar/desativar o que eu chamo de 'notepad mode'
 map <silent><F12> :call ChooseWrap()<CR>
-function ChooseWrap()
+function! ChooseWrap()
 	if &wrap
 		call DisableDisplayWrapping()
 	else
 		call EnableDisplayWrapping()
 	endif
 endfunction
-function EnableDisplayWrapping()
+function! EnableDisplayWrapping()
 	if !&wrap
 		setlocal wrap
 		set wrap
@@ -241,7 +248,7 @@ function EnableDisplayWrapping()
 		inoremap <buffer> <Down> <C-O>gj
 	endif
 endfunction
-function DisableDisplayWrapping()
+function! DisableDisplayWrapping()
 	if &wrap
 		setlocal nowrap
 		set nowrap
