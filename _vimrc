@@ -1,14 +1,16 @@
 " vimrc by Vinicius Canto
-" Versão 1.2.9
-" Última Atualização: 21/01/2009
+" Versão 1.2.10
+" Última Atualização: 27/01/2009
 
-"TODO: criar mapping pro FuzzyFinder
 "TODO: criar função para facilitar edição de arquivos gigantes (desativar
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
 "
 
+"configuração dos arquivos de ajuda
+:helpt ++t ~\vimfiles\doc
+
 "configura a linha em destaque, comum no Eclipse. (isso pode causar lentidão)
-set cursorline
+set nocursorline
 
 "configurando o TAB no modo comando (see
 "http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse)
