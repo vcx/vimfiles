@@ -1,6 +1,6 @@
 " vimrc by Vinicius Canto
-" Versão 1.2.10
-" Última Atualização: 27/01/2009
+" Versão 1.2.11
+" Última Atualização: 28/01/2009
 
 "TODO: criar função para facilitar edição de arquivos gigantes (desativar
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
