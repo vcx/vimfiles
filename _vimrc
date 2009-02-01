@@ -1,6 +1,6 @@
 " vimrc by Vinicius Canto
-" Versão 1.2.11
-" Última Atualização: 28/01/2009
+" Versão 1.2.12
+" Última Atualização: 31/01/2009
 
 "TODO: criar função para facilitar edição de arquivos gigantes (desativar
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
@@ -8,7 +8,9 @@
 if v:version >= 700
 
 	"configuração dos arquivos de ajuda, lendo dentro da pasta pessoal
-	:helpt ++t ~\vimfiles\doc
+	if v:version >= 720
+		:helpt ++t ~\vimfiles\doc
+	endif
 
 	"configura a linha em destaque, comum no Eclipse. (isso pode causar lentidão)
 	set nocursorline
@@ -194,7 +196,7 @@ if v:version >= 700
 	"mapeamento de teclas de função
 
 	"F1 -- Help. Interno do VIM
-	"F2 -- Abrir arquivo usando janelas
+	"F2 -- Abrir arquivo usando FuzzyFinder
 	"F3 -- Salvar arquivo usando janelas
 	"F4 -- Fechar usando :q
 	"F5 -- Nova tab.
