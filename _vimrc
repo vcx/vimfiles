@@ -69,7 +69,7 @@ if v:version >= 700
 
 	if has("gui_running") "pode ser usado também o gvimrc ao invés do has(guirunning)
 		"melhor para programar
-		colorscheme desert
+		colorscheme zenburn
 
 		"melhor para apresentações em projetores
 		"colorscheme murphy
