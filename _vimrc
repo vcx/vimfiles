@@ -188,10 +188,14 @@ if v:version >= 700
 	imap <C-backspace> <C-w>
 	"imap <C-backspace> <C-o>db<backspace>
 	imap <C-delete> <C-o>dw
+	imap <S-Enter> <C-o>O<Esc>ji
+	imap <C-Enter> <C-o>o<Esc>ki
 
 	"mapeamentos do modo normal
 	nmap <space> <C-d>
 	nmap <S-space> <C-u>
+	nmap <S-Enter> O<Esc>j
+	nmap <C-Enter> o<Esc>k
 
 	"mapeamento de teclas de função
 
