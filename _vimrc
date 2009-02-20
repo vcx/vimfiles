@@ -191,6 +191,8 @@ if v:version >= 700
 	imap <S-Enter> <C-o>O<Esc>ji
 	imap <C-Enter> <C-o>o<Esc>ki
 
+	imap <F3> <C-o><F3>
+
 	"mapeamentos do modo normal
 	nmap <space> <C-d>
 	nmap <S-space> <C-u>
