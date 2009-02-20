@@ -277,6 +277,10 @@ if v:version >= 700
 	"não aumentar a janela do Vim quando acionar o taglist
 	let Tlist_Inc_Winwidth = 0
 
+
+	"opções do nerdcommenter
+    let NERDShutUp=1
+
 endif
 
 
