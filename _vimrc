@@ -1,6 +1,6 @@
 " vimrc by Vinicius Canto
-" Versão 1.2.12
-" Última Atualização: 31/01/2009
+" Versão 1.2.18
+" Última Atualização: 20/02/2009
 
 "TODO: criar função para facilitar edição de arquivos gigantes (desativar
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
@@ -69,14 +69,14 @@ if v:version >= 700
 
 	if has("gui_running") "pode ser usado também o gvimrc ao invés do has(guirunning)
 		"melhor para programar
-		colorscheme zenburn
+		colorscheme ir_black
 
 		"melhor para apresentações em projetores
 		"colorscheme murphy
 
 		"Configurando a área da tela
-		set lines=38
-		set columns=106
+		set lines=35
+		set columns=130
 
 		"configurando o que vai aparecer na interface gráfica. Veja no help.
 		"Tirei a barra de ferramentas, 
