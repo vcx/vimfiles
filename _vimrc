@@ -149,6 +149,7 @@ if v:version >= 700
 	set cb=
 	set km=startsel,stopsel
 
+	"{{{"mapeamento do teclado numérico
 
 	"mapeamentos do teclado numerico no modo de insercao
 	imap <Esc>Oq 1
@@ -184,7 +185,10 @@ if v:version >= 700
 	nmap <Esc>Ol +
 	nmap <Esc>OS -
 
-	"mapeamentos do modo inserção
+	"}}}
+
+	"{{{ mapeamentos do modo inserção
+
 	imap <C-backspace> <C-w>
 	"imap <C-backspace> <C-o>db<backspace>
 	imap <C-delete> <C-o>dw
@@ -193,11 +197,19 @@ if v:version >= 700
 
 	imap <F3> <C-o><F3>
 
-	"mapeamentos do modo normal
+	imap jj <ESC>
+
+	"}}}
+
+	"{{{ mapeamentos do modo normal
 	nmap <space> <C-d>
 	nmap <S-space> <C-u>
 	nmap <S-Enter> O<Esc>j
 	nmap <C-Enter> o<Esc>k
+
+	nmap ; :
+
+	"}}}
 
 	"mapeamento de teclas de função
 
@@ -211,8 +223,6 @@ if v:version >= 700
 	"F12 -- Alterna entre modo normal e modo "notepad", ativando o wrap e o
 	"linebreak
 
-
-	"mapeamentos simples
 	nmap <F1> :help<space>
 	nmap <F2> :FuzzyFinderFile<CR>
 	nmap <C-F2> :FuzzyFinderMruFile<CR>
@@ -237,7 +247,7 @@ if v:version >= 700
 
 	map <F11> :set hlsearch!<cr>
 
-	" Configurando o F12 para ativar/desativar o que eu chamo de 'notepad mode'
+	"{{{ Configurando o F12 para ativar/desativar o que eu chamo de 'notepad mode'
 	map <silent><F12> :call ChooseWrap()<CR>
 	function! ChooseWrap()
 		if &wrap
@@ -271,7 +281,8 @@ if v:version >= 700
 			iunmap <buffer> <Down>
 		endif
 	endfunction
-
+	"}}}
+	
 	"opções do TagList
 
 	"não aumentar a janela do Vim quando acionar o taglist
@@ -281,8 +292,15 @@ if v:version >= 700
 	"opções do nerdcommenter
     let NERDShutUp=1
 
+
+    "{{{ comandos definidos pelo usuário
+    
+    command Cdhere :cd %:h
+
+    "}}}
+
 endif
 
 
 "modeline para configurar opções específicas para esse arquivo
-" vim:fdm=marker 
+" vim:fdm=marker foldminlines=0
