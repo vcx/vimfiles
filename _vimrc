@@ -47,7 +47,7 @@ if v:version >= 700
 
 	"liberando a seleção em bloco mesmo que não exista caractere na posição que eu
 	"quero. Veja no help.
-	set ve=block,onemore
+	set ve=all
 
 	"Configurando tudo que deve aparecer na minha statusline
 	set statusline=%<%f\ %6.h%m%r[%{&fileencoding}]%=A:%03.b\ H:0x%02.B\ Lin:%l\ Ch:%c\ Col:%v\ %P
