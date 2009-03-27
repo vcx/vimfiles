@@ -65,7 +65,7 @@ if v:version >= 700
 	"Configurando a linha de tabs
 	set stal=2
 
-	"carregando esquema de cores
+	"{{{ carregando esquema de cores e configuração de tela
 
 	if has("gui_running") "pode ser usado também o gvimrc ao invés do has(guirunning)
 		"melhor para programar
@@ -103,6 +103,7 @@ if v:version >= 700
 		set bg=dark
 	endif
 
+	"}}}
 
 	"desliga quebras de linha automáticas
 	set nowrap
