@@ -1,5 +1,5 @@
 " vimrc by Vinicius Canto
-" Versão 1.2.18
+" Versão 1.3.0
 " Última Atualização: 20/02/2009
 
 "TODO: criar função para facilitar edição de arquivos gigantes (desativar
@@ -69,7 +69,7 @@ if v:version >= 700
 
 	if has("gui_running") "pode ser usado também o gvimrc ao invés do has(guirunning)
 		"melhor para programar
-		colorscheme ir_black
+		colorscheme desert
 
 		"melhor para apresentações em projetores
 		"colorscheme murphy
@@ -92,8 +92,8 @@ if v:version >= 700
 		"configuração da fonte no modo gráfico para usar a Consolas. Ative o
 		"ClearType (mesmo em CRTs) ou o resultado não será bom...
 		if has("win32")
-			set gfn=Lucida_Console:h11:cANSI "caso a consolas não exista, vai de lucida mesmo
-			set gfn=Consolas:h11:cANSI
+			set gfn=Lucida_Console:h10:cANSI "caso a consolas não exista, vai de lucida mesmo
+			set gfn=Consolas:h10:cANSI
 			"set gfn=Lucida_Sans_Typewriter:h12:cANSI
 		else
 			set gfn="Bitstream_Vera_Sans_Mono":h10:cANSI "fonte boa para usar no Linux/Enlightenment
