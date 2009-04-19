@@ -1,6 +1,6 @@
 " vimrc by Vinicius Canto
-" Versão 1.3.0
-" Última Atualização: 20/02/2009
+" Versão 1.3.1
+" Última Atualização: 2009-04-21
 
 "TODO: criar função para facilitar edição de arquivos gigantes (desativar
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
@@ -191,12 +191,16 @@ if v:version >= 700
 	"{{{ mapeamentos do modo inserção
 
 	imap <C-backspace> <C-w>
-	"imap <C-backspace> <C-o>db<backspace>
 	imap <C-delete> <C-o>dw
 	imap <S-Enter> <C-o>O<Esc>ji
 	imap <C-Enter> <C-o>o<Esc>ki
 
 	imap <F3> <C-o><F3>
+	imap <F5> <ESC>:tabnew<CR>
+	imap <F6> <C-o><C-w><C-w>
+
+	imap <C-j> <C-g><C-j>
+	imap <C-k> <C-g><C-k>
 
 	imap jj <ESC>
 
@@ -228,16 +232,17 @@ if v:version >= 700
 	nmap <F2> :FuzzyFinderFile<CR>
 	nmap <C-F2> :FuzzyFinderMruFile<CR>
 
-	map <F3> :if expand("%") == ""<Bar>browse confirm w<Bar>else<Bar>confirm w<Bar>endif<CR>
-	map <F4> :q<CR>
+	nmap <F3> :if expand("%") == ""<Bar>browse confirm w<Bar>else<Bar>confirm w<Bar>endif<CR>
+	nmap <F4> :q<CR>
 
-	"mapeando F5, F6 e S-F6 para usar com tabs no Vim7
+	nmap <F6> <C-w><C-w>
+
 	let g:toggleTabs = 1
 	set guitablabel=%N/\ %t\ %M
 	if g:toggleTabs == 1
 		map <silent><F5> :tabnew<CR>
-		map <silent><F6> :tabnext<CR>
-		map <silent><S-F6> :tabprevious<CR>
+		nmap <C-Tab> :tabnext<CR>
+		nmap <S-Tab> :tabprevious<CR>
 	else
 		map <silent><C-tab> :bn<CR>
 		map <silent><C-S-tab> :bp<CR>
@@ -283,7 +288,7 @@ if v:version >= 700
 		endif
 	endfunction
 	"}}}
-	
+
 	"opções do TagList
 
 	"não aumentar a janela do Vim quando acionar o taglist
@@ -291,14 +296,14 @@ if v:version >= 700
 
 
 	"opções do nerdcommenter
-    let NERDShutUp=1
+	let NERDShutUp=1
 
 
-    "{{{ comandos definidos pelo usuário
-    
-    command Cdhere :cd %:h
+	"{{{ comandos definidos pelo usuário
 
-    "}}}
+	command Cdhere :cd %:h
+
+	"}}}
 
 endif
 
