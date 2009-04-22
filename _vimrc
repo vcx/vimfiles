@@ -244,7 +244,7 @@ if v:version >= 700
 	if g:toggleTabs == 1
 		map <silent><F5> :tabnew<CR>
 		nmap <C-Tab> :tabnext<CR>
-		nmap <S-Tab> :tabprevious<CR>
+		nmap <C-S-Tab> :tabprevious<CR>
 	else
 		map <silent><C-tab> :bn<CR>
 		map <silent><C-S-tab> :bp<CR>
