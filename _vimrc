@@ -199,8 +199,10 @@ if v:version >= 700
 	imap <F5> <ESC>:tabnew<CR>
 	imap <F6> <C-o><C-w><C-w>
 
-	imap <C-j> <C-g><C-j>
-	imap <C-k> <C-g><C-k>
+	imap <C-j> <down>
+	imap <C-k> <up>
+	imap <C-l> <right>
+	imap <C-h> <left>
 
 	imap jj <ESC>
 
