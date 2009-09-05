@@ -1,6 +1,6 @@
 " vimrc by Vinicius Canto
-" Versão 1.3.1
-" Última Atualização: 2009-04-21
+" Versão 1.3.2
+" Última Atualização: 2009-09-05
 
 "TODO: criar função para facilitar edição de arquivos gigantes (desativar
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
@@ -9,7 +9,7 @@ if v:version >= 700
 
 	"configuração dos arquivos de ajuda, lendo dentro da pasta pessoal
 	if v:version >= 720
-		:helpt ++t ~\vimfiles\doc
+		:helpt ++t $USERPROFILE\vimfiles\doc
 	endif
 
 	"configura a linha em destaque, comum no Eclipse. (isso pode causar lentidão)
@@ -306,6 +306,11 @@ if v:version >= 700
 	command Cdhere :cd %:h
 
 	"}}}
+
+
+	"configurando o suporte a T-SQL
+	let g:sql_type_default = "sqlserver" 
+
 
 endif
 
