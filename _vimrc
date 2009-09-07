@@ -231,8 +231,8 @@ if v:version >= 700
 	"linebreak
 
 	nmap <F1> :help<space>
-	nmap <F2> :FuzzyFinderFile<CR>
-	nmap <C-F2> :FuzzyFinderMruFile<CR>
+	nmap <F2> :FufFile!<CR>
+	nmap <C-F2> :FufMruFile!<CR>
 
 	nmap <F3> :if expand("%") == ""<Bar>browse confirm w<Bar>else<Bar>confirm w<Bar>endif<CR>
 	nmap <F4> :q<CR>
@@ -311,6 +311,17 @@ if v:version >= 700
 	"configurando o suporte a T-SQL
 	let g:sql_type_default = "sqlserver" 
 
+	"configurando o FuzzyFinder novo
+	"let g:fuf_modesDisable = [ 'mrufile', 'mrucmd', ]
+	let g:fuf_modesDisable = []
+	let g:fuf_infoFile = '~/vimfiles/_vim-fuf'
+	let g:fuf_ignoreCase = 1
+	let g:fuf_mrufile_maxItem = 100
+	let g:fuf_abbrevMap = {
+				\   '^de:' : [ '~\desktop',],
+				\   '^home:' : [ '~\',],
+				\   '^vi:' : [ 'c:\vinicius',],
+				\ }
 
 endif
 
