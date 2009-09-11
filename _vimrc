@@ -6,6 +6,8 @@
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
 
 if v:version >= 700
+	"desativando o modo de compatibilidade com o vi
+	set nocompatible
 
 	"configuração dos arquivos de ajuda, lendo dentro da pasta pessoal
 	if v:version >= 720
@@ -29,9 +31,6 @@ if v:version >= 700
 	set foldmethod=indent
 	set foldcolumn=4
 	set foldminlines=10
-
-	"desativando o modo de compatibilidade com o vi
-	set nocompatible
 
 	"configurando os caracteres estranhos
 	set listchars=trail:.,tab:._
@@ -213,8 +212,23 @@ if v:version >= 700
 	nmap <S-space> <C-u>
 	nmap <S-Enter> O<Esc>j
 	nmap <C-Enter> o<Esc>k
+	nmap <C-S-Enter> i<CR><ESC>
 
+	nmap <C-F6> :tabnext<CR>
+	nmap <C-S-F6> :tabprevious<CR>
+
+	nmap <C-j> 4zh
+	nmap <C-k> 4zl
+
+	nmap Y y$
 	nmap ; :
+
+	"}}}
+	
+	"{{{ mapeamentos do modo visual 
+	"mapeando o teclas do lynx no modo visual
+	vmap <SPACE> <C-d>
+	vmap <SPACE> <C-u>
 
 	"}}}
 
