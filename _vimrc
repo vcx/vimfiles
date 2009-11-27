@@ -62,7 +62,7 @@ if v:version >= 700
 	set cmdheight=3
 
 	"Configurando a linha de tabs
-	set stal=2
+	set stal=2  "showtabline
 
 	"{{{ carregando esquema de cores e configuração de tela
 
