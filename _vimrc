@@ -39,7 +39,7 @@ if v:version >= 700
 	"frescura: configurando um espaço extra de limite quando for dar um scroll.
 	"Configurando a taxa de repetição do teclado no máximo, evita H M L desnecessários.
 	"bom, é difícil explicar isso... veja no help
-	set scrolloff=5
+	"set scrolloff=5
 
 	"configurando pra sempre aparecer a statusline
 	set laststatus=2
@@ -323,7 +323,7 @@ if v:version >= 700
 
 
 	"configurando o suporte a T-SQL
-	let g:sql_type_default = "sqlserver" 
+	"let g:sql_type_default = "sqlserver" 
 
 	"configurando o FuzzyFinder novo
 	"let g:fuf_modesDisable = [ 'mrufile', 'mrucmd', ]
