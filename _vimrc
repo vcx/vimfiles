@@ -1,20 +1,22 @@
 " vimrc by Vinicius Canto
 " Versão 1.3.2
-" Última Atualização: 2009-09-05
+" Ultima Atualização: 2009-09-05
 
-"TODO: criar função para facilitar edição de arquivos gigantes (desativar
+"TODO: criar funcao para facilitar edicao de arquivos gigantes (desativar
 "undo, swap e outros recursos para ganhar velocidade. ver no wikia)
 
 if v:version >= 700
-	"desativando o modo de compatibilidade com o vi
+	"desativando o modo de compatibilidade com o vi. Deve ser uma das
+	"primeiras configurações no arquivo vimrc
 	set nocompatible
 
 	"configuração dos arquivos de ajuda, lendo dentro da pasta pessoal
-	if v:version >= 720
-		:helpt ++t $USERPROFILE\vimfiles\doc
-	endif
+	"if v:version >= 720
+		":helpt ++t $USERPROFILE\vimfiles\doc
+	"endif
 
-	"configura a linha em destaque, comum no Eclipse. (isso pode causar lentidão)
+	"configura a linha em destaque, comum no Eclipse. (como isso causa uma
+	"certa lentidão, desativei)
 	set nocursorline
 
 	"configurando o TAB no modo comando (see
@@ -22,41 +24,33 @@ if v:version >= 700
 	set wildmenu
 	set wildmode=list:longest,full
 
-	"WARNING: configuração de folding. Sugiro ler o help, já que essa é extremamente
-	"pessoal.
+	"WARNING: configuração de folding. Sugiro ler o help, já que esta é
+	"extremamente pessoal.
 	"
-	"com a configuração a seguir, o folding segue a indentação, usa quatro colunas
-	"à esquerda para mostrar o fold e só esconde trechos maiores que 10 linhas por
-	"padrão. use zR para abrir todos e zM para fechar todos.
 	set foldmethod=indent
 	set foldcolumn=4
 	set foldminlines=10
 
-	"configurando os caracteres estranhos
+	"configurando para o Gvim mostrar os caracteres especiais
 	set listchars=trail:.,tab:._
 	set list
-
-	"frescura: configurando um espaço extra de limite quando for dar um scroll.
-	"Configurando a taxa de repetição do teclado no máximo, evita H M L desnecessários.
-	"bom, é difícil explicar isso... veja no help
-	"set scrolloff=5
 
 	"configurando pra sempre aparecer a statusline
 	set laststatus=2
 
-	"liberando a seleção em bloco mesmo que não exista caractere na posição que eu
+	"liberando a seleÃ§Ã£o em bloco mesmo que nÃ£o exista caractere na posiÃ§Ã£o que eu
 	"quero. Veja no help.
-	set ve=all
+	set virtualedit=all
 
 	"Configurando tudo que deve aparecer na minha statusline
 	set statusline=%<%f\ %6.h%m%r[%{&fileencoding}]%=A:%03.b\ H:0x%02.B\ Lin:%l\ Ch:%c\ Col:%v\ %P
 
-	"Configurando o split padrão para vertical
+	"Configurando o split padrÃ£o para vertical
 	set splitright
 
-	"Configurando a codificação dos arquivos
+	"Configurando a codificaÃ§Ã£o dos arquivos
 	set encoding=utf-8
-	set termencoding=latin1 "algumas vezes pode colocar utf-8, dependendo do SO.
+	set termencoding=utf-8 "algumas vezes pode colocar utf-8, dependendo do SO.
 
 	"Configurando a altura da barra de comandos
 	set cmdheight=3
@@ -64,35 +58,37 @@ if v:version >= 700
 	"Configurando a linha de tabs
 	set stal=2  "showtabline
 
-	"{{{ carregando esquema de cores e configuração de tela
+	"{{{ carregando esquema de cores e configuraÃ§Ã£o de tela
 
-	if has("gui_running") "pode ser usado também o gvimrc ao invés do has(guirunning)
-		"melhor para programar
-		colorscheme desert
+	if has("gui_running") "pode ser usado tambÃ©m o gvimrc ao invÃ©s do has(guirunning)
+		"melhores para programar
+		"colorscheme desert
+		colorscheme wombat
 
-		"melhor para apresentações em projetores
+		"melhor para apresentaÃ§Ãµes em projetores
 		"colorscheme murphy
 
-		"Configurando a área da tela
+		"Configurando a Ã¡rea da tela
 		set lines=35
 		set columns=130
 
-		"configurando o que vai aparecer na interface gráfica. Veja no help.
+		"configurando o que vai aparecer na interface grÃ¡fica. Veja no help.
 		"Tirei a barra de ferramentas, 
-		set go=eirbh "m é a barra de menus, em caso de emergencia.
+		set go=eirbh "m Ã© a barra de menus, em caso de emergencia.
 
-		"certificando que o ALT não vai ser usado pra nada
+		"certificando que o ALT nÃ£o vai ser usado pra nada
 		set winaltkeys=no
 
-		"frescura: aumentando o espaço entre as linhas na interface gráfica.
+		"frescura: aumentando o espaÃ§o entre as linhas na interface grÃ¡fica.
 		"Aumenta legibilidade
 		set linespace=2
 
 		"configuração da fonte no modo gráfico para usar a Consolas. Ative o
-		"ClearType (mesmo em CRTs) ou o resultado não será bom...
+		"ClearType (mesmo em CRTs) ou o resultado não será tão bom...
 		if has("win32")
-			set gfn=Lucida_Console:h10:cANSI "caso a consolas não exista, vai de lucida mesmo
+			set gfn=Lucida_Console:h10:cANSI
 			set gfn=Consolas:h10:cANSI
+			set gfn=Inconsolata:h10:cANSI
 			"set gfn=Lucida_Sans_Typewriter:h12:cANSI
 		else
 			set gfn="Bitstream_Vera_Sans_Mono":h10:cANSI "fonte boa para usar no Linux/Enlightenment
@@ -110,7 +106,7 @@ if v:version >= 700
 	"mostra a régua, mostrando o posicionamento na tela no canto esquerdo
 	set ruler
 
-	"indentacao automagica
+	"indentação automagica
 	set autoindent
 
 	"ft on. Verifique com :ft
@@ -127,7 +123,7 @@ if v:version >= 700
 	"configura o backspace corretamente
 	set backspace=indent,eol,start whichwrap+=<,>,[,]
 
-	"numeracao do lado esquerdo
+	"numeração do lado esquerdo
 	set number
 
 	"syntax highlighting
@@ -225,7 +221,7 @@ if v:version >= 700
 
 	"}}}
 	
-	"{{{ mapeamentos do modo visual 
+	"{{{ mapeamentos do modo visual
 	"mapeando o teclas do lynx no modo visual
 	vmap <SPACE> <C-d>
 	vmap <SPACE> <C-u>
@@ -239,12 +235,13 @@ if v:version >= 700
 	"F3 -- Salvar arquivo usando janelas
 	"F4 -- Fechar usando :q
 	"F5 -- Nova tab.
-	"F6 -- Próxima Tab
+	"F6 -- PrÃ³xima Tab
 	"Shift + F6 -- Tab Anterior
 	"F12 -- Alterna entre modo normal e modo "notepad", ativando o wrap e o
 	"linebreak
 
-	nmap <F1> :help<space>
+	nmap <F1> :tab help<space>
+	nmap <S-F1> :tab help<CR>
 	nmap <F2> :FufFile!<CR>
 	nmap <C-F2> :FufMruFile!<CR>
 
@@ -267,7 +264,14 @@ if v:version >= 700
 	nmap <F7> :NERDTreeToggle<CR>
 	nmap <F8> :TlistToggle<CR>
 
-	map <F11> :set hlsearch!<cr>
+	nmap <F11> :set hlsearch!<cr>
+
+	"Ctrl+N minimiza o Gvim
+	nmap <C-n> :simalt ~n<CR>
+
+	"g] salta para uma definição no help. criei porque nem
+	"todo teclado envia o Ctrl-] corretamente 
+	nmap g] g<C-]>
 
 	"{{{ Configurando o F12 para ativar/desativar o que eu chamo de 'notepad mode'
 	map <silent><F12> :call ChooseWrap()<CR>
@@ -305,40 +309,45 @@ if v:version >= 700
 	endfunction
 	"}}}
 
-	"opções do TagList
+	"opÃ§Ãµes do TagList
 
-	"não aumentar a janela do Vim quando acionar o taglist
+	"nÃ£o aumentar a janela do Vim quando acionar o taglist
 	let Tlist_Inc_Winwidth = 0
 
 
-	"opções do nerdcommenter
+	"opÃ§Ãµes do nerdcommenter
 	let NERDShutUp=1
 
 
-	"{{{ comandos definidos pelo usuário
-
+	"{{{ comandos definidos pelo usuÃ¡rio
 	command Cdhere :cd %:h
-
 	"}}}
 
 
 	"configurando o suporte a T-SQL
-	"let g:sql_type_default = "sqlserver" 
+	let g:sql_type_default = "sqlserver" 
 
 	"configurando o FuzzyFinder novo
 	"let g:fuf_modesDisable = [ 'mrufile', 'mrucmd', ]
 	let g:fuf_modesDisable = []
 	let g:fuf_infoFile = '~/vimfiles/_vim-fuf'
 	let g:fuf_ignoreCase = 1
-	let g:fuf_mrufile_maxItem = 100
+	let g:fuf_mrufile_maxItem = 50
 	let g:fuf_abbrevMap = {
 				\   '^de:' : [ '~\desktop',],
 				\   '^home:' : [ '~\',],
 				\   '^vi:' : [ 'c:\vinicius',],
 				\ }
+	let g:fuf_mrufile_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|(^[^C]:\\\\)'
+
+	"ShowMarks
+	"configurando quais marcas devem ser mostradas do lado esquerdo
+	let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.'`^<>[]{}()\""
+
+
 
 endif
 
 
-"modeline para configurar opções específicas para esse arquivo
+"modeline para configurar opÃ§Ãµes especÃ­ficas para esse arquivo
 " vim:fdm=marker foldminlines=0
