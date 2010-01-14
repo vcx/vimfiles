@@ -28,7 +28,7 @@ if v:version >= 700
 	"extremamente pessoal.
 	"
 	set foldmethod=indent
-	set foldcolumn=4
+	set foldcolumn=0
 	set foldminlines=10
 
 	"configurando para o Gvim mostrar os caracteres especiais
@@ -43,7 +43,7 @@ if v:version >= 700
 	set virtualedit=all
 
 	"Configurando tudo que deve aparecer na minha statusline
-	set statusline=%<%f\ %6.h%m%r[%{&fileencoding}]%=A:%03.b\ H:0x%02.B\ Lin:%l\ Ch:%c\ Col:%v\ %P
+	set statusline=%<%f\ %6.h%m%r[%{&fileencoding}][%{&fileencoding}]%=A:%03.b\ H:0x%02.B\ Lin:%l\ Ch:%c\ Col:%v\ %P
 
 	"Configurando o split padrÃ£o para vertical
 	set splitright
@@ -327,6 +327,10 @@ if v:version >= 700
 	"configurando o suporte a T-SQL
 	let g:sql_type_default = "sqlserver" 
 
+
+	"configurando o ShowMarks
+	let g:showmarks_enable=0
+
 	"configurando o FuzzyFinder novo
 	"let g:fuf_modesDisable = [ 'mrufile', 'mrucmd', ]
 	let g:fuf_modesDisable = []
@@ -338,7 +342,8 @@ if v:version >= 700
 				\   '^home:' : [ '~\',],
 				\   '^vi:' : [ 'c:\vinicius',],
 				\ }
-	let g:fuf_mrufile_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|(^[^C]:\\\\)'
+	let g:fuf_mrufile_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
+	"let g:fuf_mrufile_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|(^[^C]:\\\\)'
 
 	"ShowMarks
 	"configurando quais marcas devem ser mostradas do lado esquerdo
