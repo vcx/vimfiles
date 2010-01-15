@@ -342,8 +342,7 @@ if v:version >= 700
 				\   '^home:' : [ '~\',],
 				\   '^vi:' : [ 'c:\vinicius',],
 				\ }
-	let g:fuf_mrufile_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-	"let g:fuf_mrufile_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|(^[^C]:\\\\)'
+	let g:fuf_mrufile_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|(^[ABDEFGHIJKLMNOPQRSTUVWXYZ]:\\\\)|(^\\\\)'
 
 	"ShowMarks
 	"configurando quais marcas devem ser mostradas do lado esquerdo
