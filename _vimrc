@@ -15,6 +15,11 @@ if v:version >= 700
 		":helpt ++t $USERPROFILE\vimfiles\doc
 	"endif
 
+	"configuração do diretório onde ficam os arquivos de swap. No Windows, é
+	"melhor deixar estes arquivos no disco local mais rápido. Isso evita lags
+	"ao editar arquivos na rede ou discos removíveis.
+	set directory=c:\temp\vim\swap
+
 	"configura a linha em destaque, comum no Eclipse. (como isso causa uma
 	"certa lentidão, desativei)
 	set nocursorline
@@ -43,7 +48,7 @@ if v:version >= 700
 	set virtualedit=all
 
 	"Configurando tudo que deve aparecer na minha statusline
-	set statusline=%<%f\ %6.h%m%r[%{&fileencoding}][%{&fileencoding}]%=A:%03.b\ H:0x%02.B\ Lin:%l\ Ch:%c\ Col:%v\ %P
+	set statusline=%<%f\ %6.h%m%r[%{&fileencoding}][%{&fileformat}]%=A:%03.b\ H:0x%02.B\ Lin:%l\ Ch:%c\ Col:%v\ %P
 
 	"Configurando o split padrÃ£o para vertical
 	set splitright
@@ -201,6 +206,9 @@ if v:version >= 700
 
 	imap jj <ESC>
 
+     imap <C-F> <ESC>gUiw`]a
+
+
 	"}}}
 
 	"{{{ mapeamentos do modo normal
@@ -224,7 +232,7 @@ if v:version >= 700
 	"{{{ mapeamentos do modo visual
 	"mapeando o teclas do lynx no modo visual
 	vmap <SPACE> <C-d>
-	vmap <SPACE> <C-u>
+	vmap <S-SPACE> <C-u>
 
 	"}}}
 
@@ -245,7 +253,8 @@ if v:version >= 700
 	nmap <F2> :FufFile!<CR>
 	nmap <C-F2> :FufMruFile!<CR>
 
-	nmap <F3> :if expand("%") == ""<Bar>browse confirm w<Bar>else<Bar>confirm w<Bar>endif<CR>
+	"nmap <F3> :if expand("%") == ""<Bar>browse confirm w<Bar>else<Bar>confirm w<Bar>endif<CR>
+	nmap <F3> :if expand("%") == ""<Bar>browse w %:p:h<Bar>else<Bar>w<Bar>endif<CR>
 	nmap <F4> :q<CR>
 
 	nmap <F6> <C-w><C-w>
@@ -334,15 +343,14 @@ if v:version >= 700
 	"configurando o FuzzyFinder novo
 	"let g:fuf_modesDisable = [ 'mrufile', 'mrucmd', ]
 	let g:fuf_modesDisable = []
-	let g:fuf_infoFile = '~/vimfiles/_vim-fuf'
+	let g:fuf_infoFile = '~/vimfiles/_vim_fuf'
 	let g:fuf_ignoreCase = 1
 	let g:fuf_mrufile_maxItem = 50
 	let g:fuf_abbrevMap = {
-				\   '^de:' : [ '~\desktop',],
 				\   '^home:' : [ '~\',],
 				\   '^vi:' : [ 'c:\vinicius',],
 				\ }
-	let g:fuf_mrufile_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|(^[ABDEFGHIJKLMNOPQRSTUVWXYZ]:\\\\)|(^\\\\)'
+	let g:fuf_mrufile_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|(^[ABDEFGHIJKLMNOPQRSTUVWXYZabdefghijklmnopqrstuvwxyz]:\\)|(^\\\\)'
 
 	"ShowMarks
 	"configurando quais marcas devem ser mostradas do lado esquerdo
