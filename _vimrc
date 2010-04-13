@@ -43,17 +43,17 @@ if v:version >= 700
 	"configurando pra sempre aparecer a statusline
 	set laststatus=2
 
-	"liberando a seleÃ§Ã£o em bloco mesmo que nÃ£o exista caractere na posiÃ§Ã£o que eu
+	"liberando a seleção em bloco mesmo que não exista caractere na posição que eu
 	"quero. Veja no help.
 	set virtualedit=all
 
 	"Configurando tudo que deve aparecer na minha statusline
 	set statusline=%<%f\ %6.h%m%r[%{&fileencoding}][%{&fileformat}]%=A:%03.b\ H:0x%02.B\ Lin:%l\ Ch:%c\ Col:%v\ %P
 
-	"Configurando o split padrÃ£o para vertical
+	"Configurando o split padrão para vertical
 	set splitright
 
-	"Configurando a codificaÃ§Ã£o dos arquivos
+	"Configurando a codificação dos arquivos
 	set encoding=utf-8
 	set termencoding=utf-8 "algumas vezes pode colocar utf-8, dependendo do SO.
 
@@ -63,38 +63,42 @@ if v:version >= 700
 	"Configurando a linha de tabs
 	set stal=2  "showtabline
 
-	"{{{ carregando esquema de cores e configuraÃ§Ã£o de tela
+	"{{{ carregando esquema de cores e configuração de tela
 
 	if has("gui_running") "pode ser usado tambÃ©m o gvimrc ao invÃ©s do has(guirunning)
 		"melhores para programar
 		"colorscheme desert
+		"colorscheme ir_black
 		colorscheme wombat
 
-		"melhor para apresentaÃ§Ãµes em projetores
+		"melhor para projetores
 		"colorscheme murphy
 
 		"Configurando a Ã¡rea da tela
 		set lines=35
-		set columns=130
+		set columns=110
 
 		"configurando o que vai aparecer na interface grÃ¡fica. Veja no help.
 		"Tirei a barra de ferramentas, 
-		set go=eirbh "m Ã© a barra de menus, em caso de emergencia.
+		set go=eh
+		"EM CASO DE EMERGENCIA
+		"m é a barra de menus
+		"r é a barra vertical
+		"b é a barra horizontal
 
-		"certificando que o ALT nÃ£o vai ser usado pra nada
+		"certificando que o ALT não vai ser usado pra nada
 		set winaltkeys=no
 
-		"frescura: aumentando o espaÃ§o entre as linhas na interface grÃ¡fica.
+		"frescura: aumentando o espaço entre as linhas
 		"Aumenta legibilidade
-		set linespace=2
+		set linespace=3
 
 		"configuração da fonte no modo gráfico para usar a Consolas. Ative o
 		"ClearType (mesmo em CRTs) ou o resultado não será tão bom...
 		if has("win32")
-			set gfn=Lucida_Console:h10:cANSI
-			set gfn=Consolas:h10:cANSI
-			set gfn=Inconsolata:h10:cANSI
-			"set gfn=Lucida_Sans_Typewriter:h12:cANSI
+			set gfn=Lucida_Console:h10
+			set gfn=Consolas:h11
+			set gfn=Inconsolata:h11 "TODO: verificar como detectar configuração de 120dpi
 		else
 			set gfn="Bitstream_Vera_Sans_Mono":h10:cANSI "fonte boa para usar no Linux/Enlightenment
 		endif
