@@ -76,7 +76,7 @@ if v:version >= 700
 
 		"Configurando a Ã¡rea da tela
 		set lines=35
-		set columns=110
+		set columns=130
 
 		"configurando o que vai aparecer na interface grÃ¡fica. Veja no help.
 		"Tirei a barra de ferramentas, 
@@ -97,8 +97,8 @@ if v:version >= 700
 		"ClearType (mesmo em CRTs) ou o resultado não será tão bom...
 		if has("win32")
 			set gfn=Lucida_Console:h10
-			set gfn=Consolas:h11
 			set gfn=Inconsolata:h11 "TODO: verificar como detectar configuração de 120dpi
+			set gfn=Consolas:h11
 		else
 			set gfn="Bitstream_Vera_Sans_Mono":h10:cANSI "fonte boa para usar no Linux/Enlightenment
 		endif
