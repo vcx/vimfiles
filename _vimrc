@@ -18,7 +18,7 @@ if v:version >= 700
 	"configuração do diretório onde ficam os arquivos de swap. No Windows, é
 	"melhor deixar estes arquivos no disco local mais rápido. Isso evita lags
 	"ao editar arquivos na rede ou discos removíveis.
-	set directory=c:\temp\vim\swap
+	set directory=c:\temp\vim\swap,/tmp/vim
 
 	"configura a linha em destaque, comum no Eclipse. (como isso causa uma
 	"certa lentidão, desativei)
