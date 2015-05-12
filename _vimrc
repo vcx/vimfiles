@@ -80,7 +80,7 @@ if v:version >= 700
 
 		"configurando o que vai aparecer na interface grÃ¡fica. Veja no help.
 		"Tirei a barra de ferramentas, 
-		set go=eh
+		set guioptions=ehrb
 		"EM CASO DE EMERGENCIA
 		"m é a barra de menus
 		"r é a barra vertical
