@@ -7,7 +7,7 @@ colors wombat
 
 set guifont=Consolas:h13
 
-set swapfile=off
+set noswapfile
 
 "modeline para configurar opÃ§Ãµes especÃ­ficas para esse arquivo
 " vim:fdm=marker foldminlines=0
