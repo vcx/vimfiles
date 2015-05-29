@@ -28,3 +28,15 @@
 [submodule "bundle/vim-trailing-whitespace"]
 	path = bundle/vim-trailing-whitespace
 	url = http://github.com/bronson/vim-trailing-whitespace
+[submodule "bundle\\vim-gitgutter.git"]
+	path = bundle\\vim-gitgutter.git
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bundle\\vim-airline"]
+	path = bundle\\vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "bundle/vim-fontzoom"]
+	path = bundle/vim-fontzoom
+	url = https://github.com/thinca/vim-fontzoom.git
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git

@@ -2,16 +2,26 @@
 
 " Startup things
 set nocompatible
+
+"from now, importing all options from mswin.vim. In the future I'll narrow
+"down the options I need.
 source $VIMRUNTIME/mswin.vim
 execute pathogen#infect()
 
 "sets syntax highlight on
-syntax on 
+syntax on
 filetype plugin on
 filetype plugin indent on "see set autoindent in this file
 
+" {{{ === Plugin Options ===
+"
 
-" {{{  === GUI Options ===  
+ let g:airline_powerline_fonts = 1
+
+"
+" }}}
+
+" {{{  === GUI Options ===
 "preferred color schemes, in order
 if has("gui_running")
 	"programming fonts
@@ -19,7 +29,7 @@ if has("gui_running")
 	colorscheme desert
 	colorscheme wombat
 
-	"for presenting 
+	"for presenting
 	"colorscheme murphy
 
 	"sets the window size
@@ -36,7 +46,7 @@ if has("gui_running")
 	"disabling ALT behavior
 	set winaltkeys=no
 
-	"improves speed reading 
+	"improves speed reading
 	set linespace=3
 
 	"Fonts for graphics. Requires antialiasing (Clear Type) on
@@ -51,8 +61,11 @@ else "for console mode
 	set bg=dark
 endif
 
-"font
-set guifont=Consolas:h13
+"trying to set Inconsolata, bug using Consolas as a fallback
+silent! set guifont=Inconsolata_for_Powerline:h13
+if &guifont != 'Inconsolata_for_Powerline:h13'
+    set guifont=Consolas:h13
+endif
 
 " turn off swap files. They rarely help me to save lifes
 set noswapfile
@@ -85,10 +98,10 @@ set splitright
 
 
 "Setting the height of command bar
-set cmdheight=3
+set cmdheight=2
 
 "Setting to always show tab line
-set showtabline=2 
+set showtabline=1
 
 
 " }}}
@@ -103,12 +116,12 @@ set termencoding=utf-8 "algumas vezes pode colocar utf-8, dependendo do SO.
 set foldmethod=indent
 set foldcolumn=0
 set foldminlines=10
-" 
+"
 " }}}
 
 " {{{ === Editing Options ===
 
-" turn off automatic line wrap. See keyboard shortcuts 
+" turn off automatic line wrap. See keyboard shortcuts
 set nowrap
 
 " turn on autoindent
@@ -298,7 +311,7 @@ nmap ; :
 " }}}
 
 
-" {{{ === User-defined functions === 
+" {{{ === User-defined functions ===
 "
 command Cdhere :cd %:h
 
