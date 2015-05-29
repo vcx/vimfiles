@@ -2,6 +2,7 @@
 
 " Startup things
 set nocompatible
+source $VIMRUNTIME/mswin.vim
 execute pathogen#infect()
 
 "sets syntax highlight on
@@ -213,6 +214,7 @@ imap <F3> <C-o><F3>
 nmap <F4> :q<CR>
 nmap <C-S-F4> :qall!
 
+nmap <F5> :tabnew<CR>
 imap <F5> <ESC>:tabnew<CR>
 
 nmap <F6> <C-w><C-w>
