@@ -37,7 +37,7 @@ if has("gui_running")
 	set columns=130
 
 	"Hiding toolbar and menu bar
-	set guioptions=ehrb
+	set guioptions=eh "rb
 	"in case of emergency
 	"m == menu
 	"r == vert scroll bar
