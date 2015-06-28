@@ -7,6 +7,10 @@ set nocompatible
 "down the options I need.
 source $VIMRUNTIME/mswin.vim
 
+"Calling Vundle to setup plugins
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 "sets syntax highlight on
 syntax on
 filetype plugin on
