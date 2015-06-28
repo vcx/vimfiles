@@ -1,4 +1,4 @@
-" New vimrc by Vinicius Canto
+" New vimrc by Vinicius Canto Xavier
 
 " Startup things
 set nocompatible
@@ -6,7 +6,6 @@ set nocompatible
 "from now, importing all options from mswin.vim. In the future I'll narrow
 "down the options I need.
 source $VIMRUNTIME/mswin.vim
-execute pathogen#infect()
 
 "sets syntax highlight on
 syntax on
