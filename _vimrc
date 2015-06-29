@@ -2,14 +2,63 @@
 
 " Startup things
 set nocompatible
+filetype off
+"Calling Vundle to setup plugins
+set rtp+=~/vimfiles/bundle/Vundle
+call vundle#begin()
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" { Plugins via Git
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+
+Plugin 'scrooloose/nerdtree' 
+Plugin 'altercation/vim-colors-solarized' 
+Plugin 'spf13/vim-colors' 
+Plugin 'tpope/vim-surround' 
+"Plugin 'tpope/vim-repeat' 
+Plugin 'jiangmiao/auto-pairs' 
+Plugin 'ctrlpvim/ctrlp.vim' 
+Plugin 'tacahiroy/ctrlp-funky' 
+"Plugin 'kristijanhusak/vim-multiple-cursors' 
+"Plugin 'vim-scripts/sessionman.vim' 
+Plugin 'matchit.zip' 
+
+"Plugin 'bling/vim-bufferline' 
+Plugin 'Lokaltog/vim-easymotion' 
+"Plugin 'jistr/vim-nerdtree-tabs' 
+Plugin 'flazz/vim-colorschemes' 
+"Plugin 'mbbill/undotree' 
+Plugin 'nathanaelkane/vim-indent-guides' 
+"Plugin 'mhinz/vim-signify' 
+"Plugin 'tpope/vim-abolish.git' 
+"Plugin 'osyo-manga/vim-over' 
+Plugin 'kana/vim-textobj-user' 
+Plugin 'kana/vim-textobj-indent' 
+"Plugin 'gcmt/wildfire.vim' 
+
+Plugin 'scrooloose/syntastic' 
+"Plugin 'mattn/webapi-vim' 
+"Plugin 'mattn/gist-vim' 
+Plugin 'scrooloose/nerdcommenter' 
+"Plugin 'tpope/vim-commentary' 
+"Plugin 'godlygeek/tabular' 
+"if executable('ctags') 
+"    Bundle 'majutsushi/tagbar' 
+"endif 
+
+Plugin 'bling/vim-airline'
+
+" }
 
 "from now, importing all options from mswin.vim. In the future I'll narrow
 "down the options I need.
 source $VIMRUNTIME/mswin.vim
-
-"Calling Vundle to setup plugins
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
 "sets syntax highlight on
 syntax on
@@ -322,4 +371,4 @@ command Cdhere :cd %:h
 " }}}
 
 "modeline para configurar opÃ§Ãµes especÃ­ficas para esse arquivo
-" vim:fdm=marker foldminlines=0
+" vim:fdm=marker foldminlines=0 foldmarker={,}
