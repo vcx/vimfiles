@@ -2,3 +2,4 @@
 *.swp
 _vim_fuf
 .netrwhist
+bundle/*

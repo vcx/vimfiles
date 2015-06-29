@@ -5,7 +5,7 @@ set nocompatible
 filetype off
 "Calling Vundle to setup plugins
 set rtp+=~/vimfiles/bundle/Vundle
-call vundle#begin()
+call vundle#rc('~/vimfiles/bundle')
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -33,7 +33,7 @@ Plugin 'matchit.zip'
 Plugin 'Lokaltog/vim-easymotion' 
 "Plugin 'jistr/vim-nerdtree-tabs' 
 Plugin 'flazz/vim-colorschemes' 
-"Plugin 'mbbill/undotree' 
+"Plugin 'mbbill/undotree'     54634
 Plugin 'nathanaelkane/vim-indent-guides' 
 "Plugin 'mhinz/vim-signify' 
 "Plugin 'tpope/vim-abolish.git' 
