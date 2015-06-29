@@ -65,15 +65,14 @@ syntax on
 filetype plugin on
 filetype plugin indent on "see set autoindent in this file
 
-" {{{ === Plugin Options ===
+" { === Plugin Options ===
 "
 
- let g:airline_powerline_fonts = 1
+ let g:airline_powerline_fonts = 0
 
-"
-" }}}
+" }
 
-" {{{  === GUI Options ===
+" {  === GUI Options ===
 "preferred color schemes, in order
 if has("gui_running")
 	"programming fonts
@@ -114,10 +113,10 @@ else "for console mode
 endif
 
 "trying to set Inconsolata, bug using Consolas as a fallback
-silent! set guifont=Inconsolata_for_Powerline:h13
-if &guifont != 'Inconsolata_for_Powerline:h13'
-    set guifont=Consolas:h13
-endif
+"silent! set guifont=Inconsolata_for_Powerline:h13
+"if &guifont != 'Inconsolata_for_Powerline:h13'
+"    set guifont=Consolas:h13
+"endif
 
 " turn off swap files. They rarely help me to save lifes
 set noswapfile
@@ -156,9 +155,9 @@ set cmdheight=2
 set showtabline=1
 
 
-" }}}
+" }
 
-" {{{ === General options ===
+" { === General options ===
 "Configurando a codificação dos arquivos
 set encoding=utf-8
 set termencoding=utf-8 "algumas vezes pode colocar utf-8, dependendo do SO.
@@ -169,9 +168,9 @@ set foldmethod=indent
 set foldcolumn=0
 set foldminlines=10
 "
-" }}}
+" }
 
-" {{{ === Editing Options ===
+" { === Editing Options ===
 
 " turn off automatic line wrap. See keyboard shortcuts
 set nowrap
@@ -202,9 +201,9 @@ inoremap <S-A-k> <Esc>:m-2<CR>==gi
 vnoremap <S-A-j> :m'>+<CR>gv=gv
 vnoremap <S-A-k> :m-2<CR>gv=gv
 
-" }}}
+" }
 
-" {{{ Keyboard Mappings ===
+" { Keyboard Mappings ===
 
 " Space movement
 nmap <space> <C-f>
@@ -216,7 +215,7 @@ nmap <C-S-space> 15zh
 nmap ; :
 imap jj <Esc>
 
-"{{{" Numeric key mappings
+"{" Numeric key mappings
 
 " insert mode
 imap <Esc>Oq 1
@@ -251,16 +250,16 @@ nmap <Esc>OQ /
 nmap <Esc>OR *
 nmap <Esc>Ol +
 nmap <Esc>OS -
-"}}}
+"}
 
-"{{{ Space Key Mappings
+"{ Space Key Mappings
 nmap <space> <C-d>
 nmap <S-space> <C-u>
 vmap <SPACE> <C-d>
 vmap <S-SPACE> <C-u>
-"}}}
+"}
 
-" {{{ Function keys in any mode
+" { Function keys in any mode
 
 "F1 -- Help
 "F2 -- Open File
@@ -295,7 +294,7 @@ nmap <F11> :set hlsearch!<cr>
 
 " toggle nowrap mode
 map <silent><F12> :call ChooseWrap()<CR>
-"{{{ function that toggles wrapmode
+"{ function that toggles wrapmode
 function! ChooseWrap()
 	if &wrap
 		call DisableDisplayWrapping()
@@ -328,11 +327,11 @@ function! DisableDisplayWrapping()
 		iunmap <buffer> <Down>
 	endif
 endfunction
-"}}}
+"}
 
-"}}}
+"}
 
-"{{{ insert mode mappings
+"{ insert mode mappings
 imap <C-backspace> <C-w>
 imap <C-delete> <C-o>dw
 imap <S-Enter> <C-o>O<Esc>ji
@@ -346,9 +345,9 @@ imap <C-S-h> <left>
 imap jj <ESC>
 
 imap <C-F> <ESC>gUiw`]a
-"}}}
+"}
 
-"{{{ Normal Mode Mappings
+"{ Normal Mode Mappings
 nmap <S-Enter> O<Esc>j
 nmap <C-Enter> o<Esc>k
 nmap <C-S-Enter> i<CR><ESC>
@@ -358,17 +357,17 @@ nmap <C-k> 4zl
 
 nmap Y y$
 nmap ; :
-"}}}
+"}
 
-" }}}
+" }
 
 
-" {{{ === User-defined functions ===
+" { === User-defined functions ===
 "
 command Cdhere :cd %:h
 
 "
-" }}}
+" }
 
 "modeline para configurar opÃ§Ãµes especÃ­ficas para esse arquivo
 " vim:fdm=marker foldminlines=0 foldmarker={,}
