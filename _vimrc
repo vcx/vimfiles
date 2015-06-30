@@ -4,7 +4,7 @@
 set nocompatible
 filetype off
 "Calling Vundle to setup plugins
-set rtp+=~/vimfiles/bundle/Vundle
+set rtp+=~/vimfiles/bundle/Vundle.vim
 call vundle#rc('~/vimfiles/bundle')
 
 " The following are examples of different formats supported.
