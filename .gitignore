@@ -3,4 +3,4 @@
 _vim_fuf
 .netrwhist
 bundle/*
-!bundle/Vundle 
+!bundle/Vundle.vim
