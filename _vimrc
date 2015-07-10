@@ -4,7 +4,7 @@
 set nocompatible
 filetype off
 "Calling Vundle to setup plugins
-set rtp+=~/vimfiles/bundle/Vundle.vim
+set rtp+=~/vimfiles/bundle/Vundle
 call vundle#rc('~/vimfiles/bundle')
 
 " The following are examples of different formats supported.
@@ -54,6 +54,7 @@ Plugin 'scrooloose/nerdcommenter'
 "endif 
 
 Plugin 'bling/vim-airline'
+Plugin 'pprovost/vim-ps1'
 
 " }
 
@@ -360,6 +361,12 @@ nmap Y y$
 nmap ; :
 "}
 
+"{ Tab mappings
+nmap <C-Tab> :tabnext<CR>
+nmap <S-C-Tab> :tabprevious<CR>
+imap <C-Tab> :tabnext<CR>
+imap <S-C-Tab> :tabprevious<CR>
+"}
 " }
 
 
