@@ -56,6 +56,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'pprovost/vim-ps1'
 
+Plugin 'MartinSGill/msbuildlog-vim'
+Plugin 'heaths/vim-msbuild'
+
 " }
 
 "from now, importing all options from mswin.vim. In the future I'll narrow
