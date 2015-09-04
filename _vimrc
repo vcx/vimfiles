@@ -7,6 +7,8 @@ filetype off
 set rtp+=~/vimfiles/bundle/Vundle
 call vundle#rc('~/vimfiles/bundle')
 
+cd c:\sources
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -58,6 +60,8 @@ Plugin 'pprovost/vim-ps1'
 
 Plugin 'MartinSGill/msbuildlog-vim'
 Plugin 'heaths/vim-msbuild'
+Plugin 'tpope/vim-dispatch'
+Plugin 'omnisharp/omnisharp-vim' 
 
 " }
 
