@@ -7,8 +7,6 @@ filetype off
 set rtp+=~/vimfiles/bundle/Vundle
 call vundle#rc('~/vimfiles/bundle')
 
-cd c:\sources
-
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
