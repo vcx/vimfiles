@@ -13,6 +13,7 @@ call vundle#rc('~/vimfiles/bundle')
 " { Plugins via Git
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 " Git plugin not hosted on GitHub
