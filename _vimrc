@@ -76,7 +76,10 @@ filetype plugin indent on "see set autoindent in this file
 " { === Plugin Options ===
 "
 
- let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 0
+
+"CtrlP open by default on top
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 
 " }
 
@@ -84,9 +87,10 @@ filetype plugin indent on "see set autoindent in this file
 "preferred color schemes, in order
 if has("gui_running")
 	"programming fonts
+	"colorscheme wombat
 	"colorscheme ir_black
 	colorscheme desert
-	colorscheme wombat
+	colorscheme solarized
 
 	"for presenting
 	"colorscheme murphy
@@ -279,6 +283,9 @@ vmap <S-SPACE> <C-u>
 
 nmap <F1> :tab help<space>
 nmap <S-F1> :tab help<CR>
+
+nmap <F2> :CtrlPMRUFiles<CR>
+nmap <C-F2> :CtrlP<CR>
 
 nmap <F3> :if expand("%") == ""<Bar>browse w %:p:h<Bar>else<Bar>w<Bar>endif<CR>
 imap <F3> <C-o><F3>
