@@ -4,7 +4,7 @@
 set nocompatible
 filetype off
 "Calling Vundle to setup plugins
-set rtp+=~/vimfiles/bundle/Vundle
+set runtimepath+=~/vimfiles/bundle/Vundle
 call vundle#rc('~/vimfiles/bundle')
 
 " The following are examples of different formats supported.
@@ -27,32 +27,30 @@ Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs' 
 Plugin 'ctrlpvim/ctrlp.vim' 
 Plugin 'tacahiroy/ctrlp-funky' 
-"Plugin 'kristijanhusak/vim-multiple-cursors' 
+Plugin 'kristijanhusak/vim-multiple-cursors' 
 "Plugin 'vim-scripts/sessionman.vim' 
 Plugin 'matchit.zip' 
 
-"Plugin 'bling/vim-bufferline' 
+Plugin 'bling/vim-bufferline' 
 Plugin 'Lokaltog/vim-easymotion' 
-"Plugin 'jistr/vim-nerdtree-tabs' 
+Plugin 'jistr/vim-nerdtree-tabs' 
 Plugin 'flazz/vim-colorschemes' 
 "Plugin 'mbbill/undotree'     54634
 Plugin 'nathanaelkane/vim-indent-guides' 
-"Plugin 'mhinz/vim-signify' 
-"Plugin 'tpope/vim-abolish.git' 
-"Plugin 'osyo-manga/vim-over' 
+Plugin 'mhinz/vim-signify' 
 Plugin 'kana/vim-textobj-user' 
 Plugin 'kana/vim-textobj-indent' 
-"Plugin 'gcmt/wildfire.vim' 
+Plugin 'gcmt/wildfire.vim' 
 
 Plugin 'scrooloose/syntastic' 
 "Plugin 'mattn/webapi-vim' 
 "Plugin 'mattn/gist-vim' 
 Plugin 'scrooloose/nerdcommenter' 
-"Plugin 'tpope/vim-commentary' 
+Plugin 'tpope/vim-commentary' 
 "Plugin 'godlygeek/tabular' 
-"if executable('ctags') 
-"    Bundle 'majutsushi/tagbar' 
-"endif 
+if executable('ctags') 
+    Bundle 'majutsushi/tagbar' 
+endif 
 
 Plugin 'bling/vim-airline'
 Plugin 'pprovost/vim-ps1'
@@ -61,7 +59,21 @@ Plugin 'MartinSGill/msbuildlog-vim'
 Plugin 'heaths/vim-msbuild'
 Plugin 'tpope/vim-dispatch'
 Plugin 'omnisharp/omnisharp-vim' 
+Plugin 'shougo/unite.vim'
+Plugin 'shougo/vimfiler.vim'
+Plugin 'shougo/neomru.vim'
 
+Plugin 'michalliu/sourcebeautify.vim'
+Plugin 'michalliu/jsruntime.vim'
+Plugin 'michalliu/jsoncodecs.vim'
+
+
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'elzr/vim-json'
+
+Plugin 'Chiel92/vim-autoformat'
+
+Plugin 'mihaifm/vimpanel'
 " }
 
 "from now, importing all options from mswin.vim. In the future I'll narrow
@@ -80,6 +92,9 @@ let g:airline_powerline_fonts = 0
 
 "CtrlP open by default on top
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
+
+" Using vimfiler instead of netrw and NERDTree // DISABLED
+let g:vimfiler_as_default_explorer = 0
 
 " }
 
@@ -302,7 +317,8 @@ nmap <C-F6> :tabnext<CR>
 nmap <C-S-F6> :tabprevious<CR>
 
 
-
+nmap <F7> :NERDTreeToggle<CR>
+nmap <S-F7> :VimfilerExplorer<CR>
 
 
 nmap <F11> :set hlsearch!<cr>
