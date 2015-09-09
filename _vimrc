@@ -35,7 +35,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'Lokaltog/vim-easymotion' 
 Plugin 'jistr/vim-nerdtree-tabs' 
 Plugin 'flazz/vim-colorschemes' 
-"Plugin 'mbbill/undotree'     54634
+Plugin 'mbbill/undotree'
 Plugin 'nathanaelkane/vim-indent-guides' 
 Plugin 'mhinz/vim-signify' 
 Plugin 'kana/vim-textobj-user' 
@@ -74,6 +74,8 @@ Plugin 'elzr/vim-json'
 Plugin 'Chiel92/vim-autoformat'
 
 Plugin 'mihaifm/vimpanel'
+
+Plugin 'ntpeters/vim-better-whitespace'
 " }
 
 "from now, importing all options from mswin.vim. In the future I'll narrow
