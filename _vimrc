@@ -33,7 +33,7 @@ Plugin 'matchit.zip'
 
 Plugin 'bling/vim-bufferline' 
 Plugin 'Lokaltog/vim-easymotion' 
-Plugin 'jistr/vim-nerdtree-tabs' 
+" Plugin 'jistr/vim-nerdtree-tabs' 
 Plugin 'flazz/vim-colorschemes' 
 Plugin 'mbbill/undotree'
 Plugin 'nathanaelkane/vim-indent-guides' 
@@ -76,6 +76,9 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'mihaifm/vimpanel'
 
 Plugin 'ntpeters/vim-better-whitespace'
+
+Plugin 'vim-scripts/AnsiEsc.vim'
+
 " }
 
 "from now, importing all options from mswin.vim. In the future I'll narrow
@@ -104,10 +107,8 @@ let g:vimfiler_as_default_explorer = 0
 "preferred color schemes, in order
 if has("gui_running")
 	"programming fonts
-	"colorscheme wombat
 	"colorscheme ir_black
-	colorscheme desert
-	colorscheme solarized
+	colorscheme wombat
 
 	"for presenting
 	"colorscheme murphy
@@ -320,7 +321,7 @@ nmap <C-S-F6> :tabprevious<CR>
 
 
 nmap <F7> :NERDTreeToggle<CR>
-nmap <S-F7> :VimfilerExplorer<CR>
+nmap <S-F7> :VimFilerExplorer<CR>
 
 
 nmap <F11> :set hlsearch!<cr>
