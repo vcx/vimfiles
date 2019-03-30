@@ -223,6 +223,8 @@ set hlsearch "see keyboard shortcuts in this doc
 set ignorecase
 set incsearch
 
+set nojoinspaces
+
 "Moving lines like in Office
 nnoremap <S-A-j> :m+<CR>==
 nnoremap <S-A-k> :m-2<CR>==
